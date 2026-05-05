@@ -10,20 +10,20 @@
 
 /* ─── FACULTY CODE → NAME MAP ─── */
 const FACULTY_MAP = {
-  "UPM":  "Dr. Umesh Moharil",   "MRY":  "Dr. Meghna Yashwante",
-  "MDB":  "Ms. Manisha Bhise",   "AGP":  "Dr. Amita Pal",
-  "AGD":  "Dr. Anil Darekar",    "BDP":  "Dr. B D Patil",
-  "PSD":  "Dr. Pratibha Desai",  "PMN":  "Dr. Poonam Nakhate",
-  "MS":   "Mr. Mukesh Sharma",   "RBM":  "Mr. Rahul Mali",
-  "HDV":  "Mr. Harshal Vaidya",  "PG":   "Mr. Pankaj Gaur",
-  "VVK":  "Mr. Vishal Kulkarni", "RPD":  "Mr. R P Dharmale",
-  "SIB":  "Mr. Sanket Barde",    "SG":   "Dr. Sandhya Gadge",
-  "NG":   "Mr. Nikhil Gurav",    "PVM":  "Mrs. Pallavi Munde",
-  "SK":   "Ms. Sheetal Khande",  "CJ":   "Dr. Chhaya Joshi",
-  "TP":   "Mr. Tukaram Patil",   "ST":   "Ms. Shilpa Tambe",
-  "NV":   "Mrs. Neha Verma",     "SM":   "Mrs. Sonali Murumkar",
-  "SB":   "Ms. Swati Bagade",    "SD":   "Mr. Shankar Deshmukh",
-  "MPP":  "Mr. Martand Pandagale",
+  "UPM": "Dr. Umesh Moharil", "MRY": "Dr. Meghna Yashwante",
+  "MDB": "Ms. Manisha Bhise", "AGP": "Dr. Amita Pal",
+  "AGD": "Dr. Anil Darekar", "BDP": "Dr. B D Patil",
+  "PSD": "Dr. Pratibha Desai", "PMN": "Dr. Poonam Nakhate",
+  "MS": "Mr. Mukesh Sharma", "RBM": "Mr. Rahul Mali",
+  "HDV": "Mr. Harshal Vaidya", "PG": "Mr. Pankaj Gaur",
+  "VVK": "Mr. Vishal Kulkarni", "RPD": "Mr. R P Dharmale",
+  "SIB": "Mr. Sanket Barde", "SG": "Dr. Sandhya Gadge",
+  "NG": "Mr. Nikhil Gurav", "PVM": "Mrs. Pallavi Munde",
+  "SK": "Ms. Sheetal Khande", "CJ": "Dr. Chhaya Joshi",
+  "TP": "Mr. Tukaram Patil", "ST": "Ms. Shilpa Tambe",
+  "NV": "Mrs. Neha Verma", "SM": "Mrs. Sonali Murumkar",
+  "SB": "Ms. Swati Bagade", "SD": "Mr. Shankar Deshmukh",
+  "MPP": "Mr. Martand Pandagale",
 };
 function facultyName(code) {
   return FACULTY_MAP[String(code).trim().toUpperCase()] || String(code).trim();
@@ -41,48 +41,48 @@ function facultyName(code) {
          'lunch' → slightly wider lunch sep    (56px)
 ═══════════════════════════════════════════════════════════════ */
 const SLOT_CONFIG = [
-  { key: '8:30',  label: '8:30',  type: 'slot'  },
-  { key: '9:30',  label: '9:30',  type: 'slot'  },
-  { key: 'BRK',   label: 'Break', type: 'break' },
-  { key: '10:45', label: '10:45', type: 'slot'  },
-  { key: '11:45', label: '11:45', type: 'slot'  },
-  { key: '12:45', label: '12:45', type: 'slot'  },
-  { key: 'LCH',   label: 'Lunch', type: 'lunch' },
-  { key: '1:30',  label: '1:30',  type: 'slot'  },
-  { key: '2:30',  label: '2:30',  type: 'slot'  },
-  { key: '3:30',  label: '3:30',  type: 'slot'  },
+  { key: '8:30', label: '8:30', type: 'slot' },
+  { key: '9:30', label: '9:30', type: 'slot' },
+  { key: 'BRK', label: 'Break', type: 'break' },
+  { key: '10:45', label: '10:45', type: 'slot' },
+  { key: '11:45', label: '11:45', type: 'slot' },
+  { key: '12:45', label: '12:45', type: 'slot' },
+  { key: 'LCH', label: 'Lunch', type: 'lunch' },
+  { key: '1:30', label: '1:30', type: 'slot' },
+  { key: '2:30', label: '2:30', type: 'slot' },
+  { key: '3:30', label: '3:30', type: 'slot' },
 ];
 
 /* Lecture-only keys (used for schedule indexing & lab merge) */
 const LECTURE_SLOTS = SLOT_CONFIG.filter(s => s.type === 'slot').map(s => s.key);
 
 /* Fixed day order */
-const FIXED_DAYS     = ['MON','TUE','WED','THU','FRI','SAT'];
-const DAYS_FULL_MAP  = {
-  MON:'Monday', TUE:'Tuesday', WED:'Wednesday',
-  THU:'Thursday', FRI:'Friday', SAT:'Saturday', SUN:'Sunday'
+const FIXED_DAYS = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+const DAYS_FULL_MAP = {
+  MON: 'Monday', TUE: 'Tuesday', WED: 'Wednesday',
+  THU: 'Thursday', FRI: 'Friday', SAT: 'Saturday', SUN: 'Sunday'
 };
-const DAYS_SHORT      = ['MON','TUE','WED','THU','FRI','SAT','SUN'];
-const DAYS_FULL_LIST  = ['MONDAY','TUESDAY','WEDNESDAY','THURSDAY','FRIDAY','SATURDAY','SUNDAY'];
+const DAYS_SHORT = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'];
+const DAYS_FULL_LIST = ['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY', 'SUNDAY'];
 
 const SKIP_TOKENS = new Set([
-  'MON','TUE','WED','THU','FRI','SAT','SUN',
-  'THE','AND','FOR','NOT','ARE','WAS','HAS',
-  'LAB','LEC','TH','FE','SE','TE','BE',
-  'DAY','TIME','AM','PM','NO','ID','PR','TD','LE','A','B','C','D',
-  'CLASS','DIVISION','SLOT','BREAK','LUNCH','FREE',
+  'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN',
+  'THE', 'AND', 'FOR', 'NOT', 'ARE', 'WAS', 'HAS',
+  'LAB', 'LEC', 'TH', 'FE', 'SE', 'TE', 'BE',
+  'DAY', 'TIME', 'AM', 'PM', 'NO', 'ID', 'PR', 'TD', 'LE', 'A', 'B', 'C', 'D',
+  'CLASS', 'DIVISION', 'SLOT', 'BREAK', 'LUNCH', 'FREE',
 ]);
 
 /* ─── DIVISION / BATCH CONFIG ─── */
 const DIVISION_CONFIG = {
-  A: { name: 'FE-A (Comp)',  batches: ['A1','A2','A3'] },
-  B: { name: 'FE-B (Civil)', batches: ['B1','B2','B3'] },
-  C: { name: 'FE-C (Comp)',  batches: ['C1','C2','C3'] },
-  D: { name: 'FE-D (Mech)',  batches: ['D1','D2','D3'] },
-  E: { name: 'FE-E (AI&DS)', batches: ['E1','E2','E3'] },
-  F: { name: 'FE-F (Ro&AI)', batches: ['F1','F2','F3'] },
-  G: { name: 'FE-G (AI&DS)', batches: ['G1','G2','G3'] },
-  H: { name: 'FE-H (MTRX)',  batches: ['H1','H2','H3'] },
+  A: { name: 'FE-A (Comp)', batches: ['A1', 'A2', 'A3'] },
+  B: { name: 'FE-B (Civil)', batches: ['B1', 'B2', 'B3'] },
+  C: { name: 'FE-C (Comp)', batches: ['C1', 'C2', 'C3'] },
+  D: { name: 'FE-D (Mech)', batches: ['D1', 'D2', 'D3'] },
+  E: { name: 'FE-E (AI&DS)', batches: ['E1', 'E2', 'E3'] },
+  F: { name: 'FE-F (Ro&AI)', batches: ['F1', 'F2', 'F3'] },
+  G: { name: 'FE-G (AI&DS)', batches: ['G1', 'G2', 'G3'] },
+  H: { name: 'FE-H (MTRX)', batches: ['H1', 'H2', 'H3'] },
 };
 
 /* ─── STATE ─── */
@@ -101,34 +101,34 @@ const state = {
 
 /* ─── DOM ─── */
 const $el = id => document.getElementById(id);
-const fileInput          = $el('fileInput');
-const uploadBox          = $el('uploadBox');
-const uploadMeta         = $el('uploadMeta');
-const fileName           = $el('fileName');
-const removeFile         = $el('removeFile');
-const previewBtn         = $el('previewBtn');
-const errorMsg           = $el('errorMsg');
-const errorText          = $el('errorText');
-const previewSection     = $el('previewSection');
-const previewTable       = $el('previewTable');
-const tableInfo          = $el('tableInfo');
-const zoomInBtn          = $el('zoomIn');
-const zoomOutBtn         = $el('zoomOut');
-const zoomLevelEl        = $el('zoomLevel');
-const extractBtn         = $el('extractBtn');
-const appLayout          = $el('appLayout');
-const sidebar            = $el('sidebar');
-const sidebarClose       = $el('sidebarClose');
-const sidebarOpen        = $el('sidebarOpen');
-const teacherSearch      = $el('teacherSearch');
-const teacherList        = $el('teacherList');
+const fileInput = $el('fileInput');
+const uploadBox = $el('uploadBox');
+const uploadMeta = $el('uploadMeta');
+const fileName = $el('fileName');
+const removeFile = $el('removeFile');
+const previewBtn = $el('previewBtn');
+const errorMsg = $el('errorMsg');
+const errorText = $el('errorText');
+const previewSection = $el('previewSection');
+const previewTable = $el('previewTable');
+const tableInfo = $el('tableInfo');
+const zoomInBtn = $el('zoomIn');
+const zoomOutBtn = $el('zoomOut');
+const zoomLevelEl = $el('zoomLevel');
+const extractBtn = $el('extractBtn');
+const appLayout = $el('appLayout');
+const sidebar = $el('sidebar');
+const sidebarClose = $el('sidebarClose');
+const sidebarOpen = $el('sidebarOpen');
+const teacherSearch = $el('teacherSearch');
+const teacherList = $el('teacherList');
 const contentPlaceholder = $el('contentPlaceholder');
-const timetableView      = $el('timetableView');
+const timetableView = $el('timetableView');
 const teacherNameDisplay = $el('teacherNameDisplay');
-const colorLegend        = $el('colorLegend');
-const timetableGrid      = $el('timetableGrid');
-const downloadPdf        = $el('downloadPdf');
-const themeToggle        = $el('themeToggle');
+const colorLegend = $el('colorLegend');
+const timetableGrid = $el('timetableGrid');
+const downloadPdf = $el('downloadPdf');
+const themeToggle = $el('themeToggle');
 
 /* ══════════════════════════════════════════
    THEME
@@ -154,8 +154,8 @@ initTheme();
 /* ══════════════════════════════════════════
    FILE UPLOAD / DRAG-DROP
 ══════════════════════════════════════════ */
-uploadBox.addEventListener('click',     () => fileInput.click());
-uploadBox.addEventListener('dragover',  e  => { e.preventDefault(); uploadBox.classList.add('dragover'); });
+uploadBox.addEventListener('click', () => fileInput.click());
+uploadBox.addEventListener('dragover', e => { e.preventDefault(); uploadBox.classList.add('dragover'); });
 uploadBox.addEventListener('dragleave', () => uploadBox.classList.remove('dragover'));
 uploadBox.addEventListener('drop', e => {
   e.preventDefault(); uploadBox.classList.remove('dragover');
@@ -171,7 +171,7 @@ removeFile.addEventListener('click', () => {
 function handleFile(file) {
   hideError();
   const ext = file.name.split('.').pop().toLowerCase();
-  if (!['xlsx','xls'].includes(ext)) {
+  if (!['xlsx', 'xls'].includes(ext)) {
     showError('Invalid file type. Please upload a .xlsx or .xls file.'); return;
   }
   fileName.textContent = file.name; uploadMeta.style.display = 'flex';
@@ -195,7 +195,7 @@ previewBtn.addEventListener('click', () => {
 
 function buildPreview() {
   const sheetName = state.workbook.SheetNames[0];
-  const ws   = state.workbook.Sheets[sheetName];
+  const ws = state.workbook.Sheets[sheetName];
   const data = XLSX.utils.sheet_to_json(ws, { header: 1, defval: '' });
   state.sheetData = data; state.headers = data[0] || [];
   tableInfo.textContent = `Sheet: "${sheetName}" · ${data.length} rows × ${state.headers.length} cols`;
@@ -203,7 +203,7 @@ function buildPreview() {
   previewTable.innerHTML = '';
   const thead = document.createElement('thead');
   const tbody = document.createElement('tbody');
-  const hr    = document.createElement('tr');
+  const hr = document.createElement('tr');
   state.headers.forEach(h => { const th = document.createElement('th'); th.textContent = h; hr.appendChild(th); });
   thead.appendChild(hr);
   for (let i = 1; i < Math.min(data.length, 60); i++) {
@@ -214,7 +214,7 @@ function buildPreview() {
   previewTable.appendChild(thead); previewTable.appendChild(tbody);
 }
 
-zoomInBtn.addEventListener('click',  () => changeZoom( 0.1));
+zoomInBtn.addEventListener('click', () => changeZoom(0.1));
 zoomOutBtn.addEventListener('click', () => changeZoom(-0.1));
 function changeZoom(delta) {
   state.zoomLevel = Math.min(2, Math.max(0.5, state.zoomLevel + delta));
@@ -227,7 +227,7 @@ function changeZoom(delta) {
 ══════════════════════════════════════════ */
 extractBtn.addEventListener('click', async () => {
   if (!state.sheetData.length) return;
-  const btnText    = extractBtn.querySelector('.btn-text');
+  const btnText = extractBtn.querySelector('.btn-text');
   const btnSpinner = extractBtn.querySelector('.btn-spinner');
   btnText.style.display = 'none'; btnSpinner.style.display = 'flex'; extractBtn.disabled = true;
   await delay(600);
@@ -255,50 +255,50 @@ function parseTimetableStructure() {
     const row = data[r] || [];
     for (let c = 0; c < row.length; c++) {
       const v = String(row[c] || '').trim().toUpperCase();
-      if (DAYS_FULL_LIST.some(d => v === d) || DAYS_SHORT.some(d => v === d)) dayCC[c] = (dayCC[c]||0)+1;
-      if (/^\d{1,2}[:\.]\d{2}(\s*(AM|PM))?$/i.test(v)) timCC[c] = (timCC[c]||0)+1;
+      if (DAYS_FULL_LIST.some(d => v === d) || DAYS_SHORT.some(d => v === d)) dayCC[c] = (dayCC[c] || 0) + 1;
+      if (/^\d{1,2}[:\.]\d{2}(\s*(AM|PM))?$/i.test(v)) timCC[c] = (timCC[c] || 0) + 1;
     }
   }
-  state.dayCol  = +(Object.keys(dayCC).sort((a,b) => dayCC[b]  - dayCC[a])[0]  ?? 0);
-  state.timeCol = +(Object.keys(timCC).sort((a,b) => timCC[b] - timCC[a])[0] ?? 1);
+  state.dayCol = +(Object.keys(dayCC).sort((a, b) => dayCC[b] - dayCC[a])[0] ?? 0);
+  state.timeCol = +(Object.keys(timCC).sort((a, b) => timCC[b] - timCC[a])[0] ?? 1);
 
   const timeSeen = new Set(), labels = [];
   for (const row of data) {
-    const v = normaliseTime(String((row||[])[state.timeCol]||'').trim());
+    const v = normaliseTime(String((row || [])[state.timeCol] || '').trim());
     if (v && !timeSeen.has(v)) { timeSeen.add(v); labels.push(v); }
   }
   state.timeSlotLabels = labels;
 
   const classCols = {};
   for (let r = 0; r < Math.min(data.length, 8); r++) {
-    const row = data[r]||[];
-    const dv  = String(row[state.dayCol]||'').trim().toUpperCase();
-    if (['CLASS','DIVISION',''].includes(dv)) {
+    const row = data[r] || [];
+    const dv = String(row[state.dayCol] || '').trim().toUpperCase();
+    if (['CLASS', 'DIVISION', ''].includes(dv)) {
       for (let c = 0; c < row.length; c++) {
-        if (c===state.dayCol||c===state.timeCol) continue;
-        const v = String(row[c]||'').trim(); if (v&&!/^\d+$/.test(v)) classCols[c]=v;
+        if (c === state.dayCol || c === state.timeCol) continue;
+        const v = String(row[c] || '').trim(); if (v && !/^\d+$/.test(v)) classCols[c] = v;
       }
     }
   }
   if (!Object.keys(classCols).length) {
-    (data[0]||[]).forEach((v,c) => {
-      if (c!==state.dayCol&&c!==state.timeCol) { const s=String(v||'').trim(); if(s) classCols[c]=s; }
+    (data[0] || []).forEach((v, c) => {
+      if (c !== state.dayCol && c !== state.timeCol) { const s = String(v || '').trim(); if (s) classCols[c] = s; }
     });
   }
   state.classColMap = classCols;
 
   const dayRowMap = {}; let curDay = null;
   for (const row of data) {
-    const dv = String((row||[])[state.dayCol]||'').trim().toUpperCase();
+    const dv = String((row || [])[state.dayCol] || '').trim().toUpperCase();
     const dk = matchDay(dv);
-    if (dk) { curDay = dk; if (!dayRowMap[dk]) dayRowMap[dk]=[]; }
+    if (dk) { curDay = dk; if (!dayRowMap[dk]) dayRowMap[dk] = []; }
     if (curDay) {
-      const t = String((row||[])[state.timeCol]||'').trim();
+      const t = String((row || [])[state.timeCol] || '').trim();
       if (t && /\d/.test(t)) dayRowMap[curDay].push(row);
     }
   }
   state.dayRowMap = dayRowMap;
-  console.log('[Structure]', { dayCol:state.dayCol, timeCol:state.timeCol, timeSlots:state.timeSlotLabels, classCols, days:Object.keys(state.dayRowMap) });
+  console.log('[Structure]', { dayCol: state.dayCol, timeCol: state.timeCol, timeSlots: state.timeSlotLabels, classCols, days: Object.keys(state.dayRowMap) });
 
   /* ── Build divColMap: which columns belong to which division ── */
   buildDivColMap();
@@ -309,21 +309,41 @@ function parseTimetableStructure() {
 ══════════════════════════════════════════ */
 function parseTeachers() {
   const data = state.sheetData;
+
   const known = new Set(Object.keys(FACULTY_MAP).map(k => k.toUpperCase()));
-  const set = new Set(), occ = {};
+  const detected = new Set();
+  const freq = {};
+
   for (const row of data) {
-    for (const cell of (row||[])) {
-      const raw = String(cell||'').trim(); if (!raw) continue;
-      extractCodes(raw).forEach(code => {
-        if (known.has(code)) { set.add(code); }
-        else if (/^[A-Z]{2,5}$/.test(code) && !SKIP_TOKENS.has(code)) {
-          occ[code]=(occ[code]||0)+1; if(occ[code]>=2) set.add(code);
+    for (const cell of (row || [])) {
+      const raw = String(cell || '').trim();
+      if (!raw) continue;
+
+      const codes = extractCodes(raw);
+
+      codes.forEach(code => {
+        const c = code.toUpperCase();
+
+        // ✅ Only accept if:
+        // 1. Exists in FACULTY_MAP
+        // 2. OR appears inside brackets (teacher pattern)
+        if (known.has(c) || /\(\s*[A-Z]{2,5}\s*\)/.test(raw)) {
+          freq[c] = (freq[c] || 0) + 1;
         }
       });
     }
   }
-  state.teachers = Array.from(set);
-  console.log('[Teachers]', state.teachers);
+
+  // ✅ Only keep frequently appearing codes
+  Object.entries(freq).forEach(([code, count]) => {
+    if (count >= 2) detected.add(code);
+  });
+
+  state.teachers = [...detected].filter(code =>
+    FACULTY_MAP[code] // 🔥 FINAL FILTER → only real teachers
+  );
+
+  console.log('[Filtered Teachers]', state.teachers);
 }
 
 /* ══════════════════════════════════════════
@@ -333,20 +353,20 @@ function buildTeacherList(filter = '') {
   teacherList.innerHTML = '';
   const q = filter.toLowerCase();
   const filtered = state.teachers
-    .filter(c => { const n=facultyName(c).toLowerCase(); return c.toLowerCase().includes(q)||n.includes(q); })
-    .sort((a,b) => facultyName(a).localeCompare(facultyName(b)));
+    .filter(c => { const n = facultyName(c).toLowerCase(); return c.toLowerCase().includes(q) || n.includes(q); })
+    .sort((a, b) => facultyName(a).localeCompare(facultyName(b)));
   if (!filtered.length) {
-    const li=document.createElement('li'); li.textContent='No teachers found'; li.style.opacity='.5';
+    const li = document.createElement('li'); li.textContent = 'No teachers found'; li.style.opacity = '.5';
     teacherList.appendChild(li); return;
   }
   filtered.forEach(code => {
-    const li=document.createElement('li'), name=facultyName(code);
-    li.innerHTML=`<span class="teacher-full-name">${FACULTY_MAP[code]?`${name} (${code})`:code}</span>`;
-    if (code===state.selectedTeacher) li.classList.add('active');
+    const li = document.createElement('li'), name = facultyName(code);
+    li.innerHTML = `<span class="teacher-full-name">${FACULTY_MAP[code] ? `${name} (${code})` : code}</span>`;
+    if (code === state.selectedTeacher) li.classList.add('active');
     li.addEventListener('click', () => {
-      document.querySelectorAll('.teacher-list li').forEach(el=>el.classList.remove('active'));
+      document.querySelectorAll('.teacher-list li').forEach(el => el.classList.remove('active'));
       li.classList.add('active'); selectTeacher(code);
-      if (window.innerWidth<900) sidebar.classList.remove('open');
+      if (window.innerWidth < 900) sidebar.classList.remove('open');
     });
     teacherList.appendChild(li);
   });
@@ -359,9 +379,9 @@ teacherSearch.addEventListener('input', () => buildTeacherList(teacherSearch.val
 function selectTeacher(code) {
   clearTimetable();
   state.selectedTeacher = code; state.subjectColorMap = {}; state.colorIndex = 0;
-  teacherNameDisplay.textContent   = `${facultyName(code)} (${code})`;
+  teacherNameDisplay.textContent = `${facultyName(code)} (${code})`;
   contentPlaceholder.style.display = 'none';
-  timetableView.style.display      = 'block';
+  timetableView.style.display = 'block';
   buildTimetableGrid(code);
 }
 function clearTimetable() {
@@ -370,8 +390,8 @@ function clearTimetable() {
 
 const COLOR_COUNT = 8;
 function getSubjectColor(subject) {
-  const key = String(subject).replace(/\s+/g,'').toUpperCase().slice(0,8);
-  if (state.subjectColorMap[key]===undefined) { state.subjectColorMap[key]=state.colorIndex%COLOR_COUNT; state.colorIndex++; }
+  const key = String(subject).replace(/\s+/g, '').toUpperCase().slice(0, 8);
+  if (state.subjectColorMap[key] === undefined) { state.subjectColorMap[key] = state.colorIndex % COLOR_COUNT; state.colorIndex++; }
   return state.subjectColorMap[key];
 }
 
@@ -393,9 +413,9 @@ function buildTimetableGrid(teacher) {
 
   /* ── 2. Fill schedule from Excel data ── */
   for (let r = 0; r < data.length; r++) {
-    const row    = data[r] || [];
-    const dayVal = String(row[dayCol]  || '').trim().toUpperCase();
-    const timeRaw= String(row[timeCol] || '').trim();
+    const row = data[r] || [];
+    const dayVal = String(row[dayCol] || '').trim().toUpperCase();
+    const timeRaw = String(row[timeCol] || '').trim();
 
     const dk = matchDay(dayVal);
     if (dk) curDay = dk;
@@ -408,8 +428,8 @@ function buildTimetableGrid(teacher) {
     if (!slotKey) continue;
 
     for (let c = 0; c < row.length; c++) {
-      if (c===dayCol||c===timeCol) continue;
-      const raw = String(row[c]||'').trim(); if (!raw) continue;
+      if (c === dayCol || c === timeCol) continue;
+      const raw = String(row[c] || '').trim(); if (!raw) continue;
       splitCellSegments(raw).forEach(seg => {
         if (!containsTeacher(seg, teacher)) return;
         const entry = parseCellSegment(seg, teacher); if (!entry) return;
@@ -428,13 +448,13 @@ function buildTimetableGrid(teacher) {
     while (i < LECTURE_SLOTS.length) {
       const key = LECTURE_SLOTS[i], entries = schedule[day][key];
       if (!entries.length) { i++; continue; }
-      const isLab = entries.some(e => e.type==='lab'), subjKey = entries[0]?.subject||'';
+      const isLab = entries.some(e => e.type === 'lab'), subjKey = entries[0]?.subject || '';
       if (isLab) {
         let span = 1;
-        while (i+span < LECTURE_SLOTS.length) {
-          const k2 = LECTURE_SLOTS[i+span], ent2 = schedule[day][k2];
+        while (i + span < LECTURE_SLOTS.length) {
+          const k2 = LECTURE_SLOTS[i + span], ent2 = schedule[day][k2];
           if (!ent2.length) break;
-          if (ent2.some(e=>e.type==='lab') && ent2[0]?.subject===subjKey) { mergeInfo[day][k2]={skip:true}; span++; }
+          if (ent2.some(e => e.type === 'lab') && ent2[0]?.subject === subjKey) { mergeInfo[day][k2] = { skip: true }; span++; }
           else break;
         }
         mergeInfo[day][key] = { span };
@@ -445,10 +465,14 @@ function buildTimetableGrid(teacher) {
 
   /* ── 4. CSS grid columns ── */
   const colDefs = SLOT_CONFIG.map(s =>
-    s.type==='slot' ? 'minmax(110px,1fr)' : s.type==='break' ? '48px' : '56px'
+    s.type === 'slot'
+      ? 'minmax(110px,1fr)'
+      : s.type === 'break'
+        ? '48px'
+        : '56px'
   );
-  timetableGrid.style.gridTemplateColumns = `120px ${colDefs.join(' ')}`;
-  timetableGrid.innerHTML = '';
+
+  timetableGrid.style.gridTemplateColumns = `120px ${colDefs.join(' ')}`; timetableGrid.innerHTML = '';
 
   /* ── 5. Header row ── */
   const corner = document.createElement('div');
@@ -474,7 +498,7 @@ function buildTimetableGrid(teacher) {
   for (const day of FIXED_DAYS) {
     const dayCell = document.createElement('div');
     dayCell.className = 'grid-cell day-cell';
-    dayCell.innerHTML = `<span class="day-short">${day}</span><span class="day-full">${DAYS_FULL_MAP[day]||day}</span>`;
+    dayCell.innerHTML = `<span class="day-short">${day}</span><span class="day-full">${DAYS_FULL_MAP[day] || day}</span>`;
     timetableGrid.appendChild(dayCell);
 
     for (const slot of SLOT_CONFIG) {
@@ -487,11 +511,11 @@ function buildTimetableGrid(teacher) {
         continue;
       }
 
-      const mi      = mergeInfo[day]?.[slot.key];
+      const mi = mergeInfo[day]?.[slot.key];
       if (mi?.skip) continue;   /* absorbed by lab merge */
 
       const entries = schedule[day][slot.key] || [];
-      const span    = mi?.span || 1;
+      const span = mi?.span || 1;
       const cssSpan = computeCssSpan(slot.key, span);
 
       if (!entries.length) {
@@ -504,19 +528,19 @@ function buildTimetableGrid(teacher) {
       } else {
         /* Subject cell */
         hasAnyData = true;
-        const isLab    = entries.some(e => e.type==='lab');
+        const isLab = entries.some(e => e.type === 'lab');
         const colorIdx = getSubjectColor(entries[0].subject || entries[0].raw || '');
-        const cell     = document.createElement('div');
+        const cell = document.createElement('div');
         cell.className = `grid-cell subject-cell color-${colorIdx}`;
         if (cssSpan > 1) cell.style.gridColumn = `span ${cssSpan}`;
 
-        const bySubject    = groupBySubject(entries);
-        const typeBadge    = isLab
-          ? `<span class="type-badge lab-badge">Lab${span>1?` (${span}h)`:''}</span>`
+        const bySubject = groupBySubject(entries);
+        const typeBadge = isLab
+          ? `<span class="type-badge lab-badge">Lab${span > 1 ? ` (${span}h)` : ''}</span>`
           : `<span class="type-badge lec-badge">Lecture</span>`;
         const subjectBlocks = bySubject.map(({ subject, classDivs }) => {
           const divText = classDivs.filter(Boolean).join(', ');
-          return `<div class="subject-entry"><div class="subject-name">${escHtml(subject)}</div>${divText?`<div class="class-div">${escHtml(divText)}</div>`:''}</div>`;
+          return `<div class="subject-entry"><div class="subject-name">${escHtml(subject)}</div>${divText ? `<div class="class-div">${escHtml(divText)}</div>` : ''}</div>`;
         }).join('<div class="entry-sep"></div>');
 
         cell.innerHTML = `<div class="subject-cell-inner">${subjectBlocks}<div class="cell-footer">${typeBadge}</div></div>`;
@@ -581,30 +605,30 @@ function splitCellSegments(raw) {
 function splitOnCommaOutsideParens(str) {
   const parts = []; let depth = 0, start = 0;
   for (let i = 0; i < str.length; i++) {
-    if (str[i]==='(') depth++;
-    else if (str[i]===')') depth--;
-    else if (str[i]===',' && depth===0) { parts.push(str.slice(start,i)); start=i+1; }
+    if (str[i] === '(') depth++;
+    else if (str[i] === ')') depth--;
+    else if (str[i] === ',' && depth === 0) { parts.push(str.slice(start, i)); start = i + 1; }
   }
   parts.push(str.slice(start)); return parts;
 }
 
 function containsTeacher(text, code) {
-  const esc = code.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
-  return new RegExp(`(?:^|[^A-Za-z])${esc}(?:[^A-Za-z]|$)`,'i').test(text);
+  const esc = code.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return new RegExp(`(?:^|[^A-Za-z])${esc}(?:[^A-Za-z]|$)`, 'i').test(text);
 }
 
 function parseCellSegment(segment, teacherCode) {
   let s = segment.trim();
   const isLab = /\blab\b|\bpr\b|\bpractical\b/i.test(s);
-  const esc = teacherCode.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
-  s = s.replace(new RegExp(`\\(\\s*${esc}\\s*\\)`,'gi'),'');
-  s = s.replace(new RegExp(`(?:^|\\s)${esc}(?:\\s|$)`,'gi'),' ');
-  s = s.replace(/\b[A-Z]\d+\b/g,'').replace(/\b\d{2,}\b/g,'')
-       .replace(/\b(Lab|Pr|Lec|Practical|TD|LE)\b/gi,'')
-       .replace(/[()]/g,'').replace(/[-\/,]+$/,'').replace(/^[-\/,]+/,'')
-       .replace(/\s{2,}/g,' ').trim();
-  if (!s || s.length<2 || SKIP_TOKENS.has(s.toUpperCase())) return null;
-  return { subject:s, raw:segment, type: isLab?'lab':'lec' };
+  const esc = teacherCode.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  s = s.replace(new RegExp(`\\(\\s*${esc}\\s*\\)`, 'gi'), '');
+  s = s.replace(new RegExp(`(?:^|\\s)${esc}(?:\\s|$)`, 'gi'), ' ');
+  s = s.replace(/\b[A-Z]\d+\b/g, '').replace(/\b\d{2,}\b/g, '')
+    .replace(/\b(Lab|Pr|Lec|Practical|TD|LE)\b/gi, '')
+    .replace(/[()]/g, '').replace(/[-\/,]+$/, '').replace(/^[-\/,]+/, '')
+    .replace(/\s{2,}/g, ' ').trim();
+  if (!s || s.length < 2 || SKIP_TOKENS.has(s.toUpperCase())) return null;
+  return { subject: s, raw: segment, type: isLab ? 'lab' : 'lec' };
 }
 
 function extractCodes(raw) {
@@ -614,11 +638,11 @@ function extractCodes(raw) {
 function groupBySubject(entries) {
   const map = new Map();
   entries.forEach(e => {
-    const k = e.subject||'—';
-    if (!map.has(k)) map.set(k,{subject:k,classDivs:[]});
+    const k = e.subject || '—';
+    if (!map.has(k)) map.set(k, { subject: k, classDivs: [] });
     if (e.classDiv) map.get(k).classDivs.push(e.classDiv);
   });
-  map.forEach(v => { v.classDivs=[...new Set(v.classDivs)]; });
+  map.forEach(v => { v.classDivs = [...new Set(v.classDivs)]; });
   return [...map.values()];
 }
 
@@ -628,27 +652,27 @@ function groupBySubject(entries) {
 function normaliseTime(raw) {
   const m = raw.match(/(\d{1,2})[:\.](\d{2})/); if (!m) return '';
   let h = parseInt(m[1]); const min = m[2];
-  if (/pm/i.test(raw) && h<12) h+=12;
-  if (/am/i.test(raw) && h===12) h=0;
+  if (/pm/i.test(raw) && h < 12) h += 12;
+  if (/am/i.test(raw) && h === 12) h = 0;
   return `${h}:${min}`;
 }
 function parseTimeToMins(t) {
   const m = String(t).match(/(\d{1,2}):(\d{2})/); if (!m) return 9999;
-  let h=parseInt(m[1]); const min=parseInt(m[2]);
-  if (h<7) h+=12; return h*60+min;
+  let h = parseInt(m[1]); const min = parseInt(m[2]);
+  if (h < 7) h += 12; return h * 60 + min;
 }
 function matchDay(val) {
   const v = String(val).trim().toUpperCase();
-  const si = DAYS_SHORT.findIndex(d => v===d); if (si>=0) return DAYS_SHORT[si];
-  const fi = DAYS_FULL_LIST.findIndex(d => v===d||v.startsWith(d)); if (fi>=0) return DAYS_SHORT[fi];
+  const si = DAYS_SHORT.findIndex(d => v === d); if (si >= 0) return DAYS_SHORT[si];
+  const fi = DAYS_FULL_LIST.findIndex(d => v === d || v.startsWith(d)); if (fi >= 0) return DAYS_SHORT[fi];
   return null;
 }
 function escHtml(s) {
-  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 function buildLegend(subjects) {
   colorLegend.innerHTML = '';
-  [...new Set(subjects)].slice(0,12).forEach(subj => {
+  [...new Set(subjects)].slice(0, 12).forEach(subj => {
     const idx = getSubjectColor(subj), item = document.createElement('div');
     item.className = `legend-item color-${idx}`; item.textContent = subj;
     colorLegend.appendChild(item);
@@ -676,28 +700,28 @@ downloadPdf.addEventListener('click', async () => {
   downloadPdf.textContent = '⏳ Generating…'; downloadPdf.disabled = true;
 
   const savedOverflow = wrap.style.overflow;
-  const savedWidth    = wrap.style.width;
+  const savedWidth = wrap.style.width;
   const savedMaxWidth = wrap.style.maxWidth;
   wrap.style.overflow = 'visible';
   wrap.style.maxWidth = 'none';
-  wrap.style.width    = (timetableGrid.scrollWidth + 24) + 'px';
+  wrap.style.width = (timetableGrid.scrollWidth + 24) + 'px';
   await delay(120);
 
   try {
     const bgRaw = getComputedStyle(document.documentElement).getPropertyValue('--surface').trim();
-    const bg    = bgRaw || '#ffffff';
+    const bg = bgRaw || '#ffffff';
 
     const canvas = await html2canvas(wrap, {
       scale: 2, useCORS: true, backgroundColor: bg,
-      width:  wrap.scrollWidth,
+      width: wrap.scrollWidth,
       height: wrap.scrollHeight,
       windowWidth: wrap.scrollWidth + 300,
     });
 
-    const pdf  = new jsPDF({ orientation: 'landscape', unit: 'mm', format: 'a4' });
+    const pdf = new jsPDF({ orientation: 'landscape', unit: 'mm', format: 'a4' });
     const pdfW = pdf.internal.pageSize.getWidth();
     const pdfH = pdf.internal.pageSize.getHeight();
-    const ML=8, MR=8, MT=28, MB=8;
+    const ML = 8, MR = 8, MT = 28, MB = 8;
     const availW = pdfW - ML - MR;
     const availH = pdfH - MT - MB;
 
@@ -706,16 +730,16 @@ downloadPdf.addEventListener('click', async () => {
       : `Timetable: ${facultyName(state.selectedTeacher)} (${state.selectedTeacher})`;
     const pdfFile = isBatch
       ? `Timetable_${state.selectedDiv}_${state.selectedBatch}.pdf`
-      : `Timetable_${facultyName(state.selectedTeacher).replace(/\s+/g,'_')}.pdf`;
+      : `Timetable_${facultyName(state.selectedTeacher).replace(/\s+/g, '_')}.pdf`;
 
     const addHeader = (doc, page) => {
-      doc.setFontSize(14); doc.setFont('helvetica','bold'); doc.setTextColor(42,31,20);
+      doc.setFontSize(14); doc.setFont('helvetica', 'bold'); doc.setTextColor(42, 31, 20);
       doc.text(pdfTitle, ML, 14);
-      doc.setFontSize(8); doc.setFont('helvetica','normal'); doc.setTextColor(120,100,80);
-      doc.text(`Generated by Timetable Extractor · ${new Date().toLocaleDateString()}` + (page>1?`  [page ${page}]`:''), ML, 21);
+      doc.setFontSize(8); doc.setFont('helvetica', 'normal'); doc.setTextColor(120, 100, 80);
+      doc.text(`Generated by Timetable Extractor · ${new Date().toLocaleDateString()}` + (page > 1 ? `  [page ${page}]` : ''), ML, 21);
     };
 
-    const scaleH  = availH / canvas.height;
+    const scaleH = availH / canvas.height;
     const scaledW = canvas.width * scaleH;
 
     if (scaledW <= availW) {
@@ -749,14 +773,14 @@ downloadPdf.addEventListener('click', async () => {
 /* ══════════════════════════════════════════
    SIDEBAR (MOBILE)
 ══════════════════════════════════════════ */
-sidebarOpen.addEventListener('click',  () => sidebar.classList.add('open'));
+sidebarOpen.addEventListener('click', () => sidebar.classList.add('open'));
 sidebarClose.addEventListener('click', () => sidebar.classList.remove('open'));
 
 /* ══════════════════════════════════════════
    MISC
 ══════════════════════════════════════════ */
-function showError(msg) { errorText.textContent=msg; errorMsg.style.display='flex'; errorMsg.scrollIntoView({behavior:'smooth',block:'nearest'}); }
-function hideError() { errorMsg.style.display='none'; }
+function showError(msg) { errorText.textContent = msg; errorMsg.style.display = 'flex'; errorMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }
+function hideError() { errorMsg.style.display = 'none'; }
 const delay = ms => new Promise(r => setTimeout(r, ms));
 /* ══════════════════════════════════════════════════════════════════
    BATCH / DIVISION MODE  —  Complete Implementation
@@ -807,7 +831,7 @@ function buildDivColMap() {
   });
 
   console.log('[DivColMap]', Object.fromEntries(
-    Object.entries(state.divColMap).map(([k,v]) => [k,[...v]])
+    Object.entries(state.divColMap).map(([k, v]) => [k, [...v]])
   ));
 }
 
@@ -844,16 +868,16 @@ function parseBatchCellSegment(seg, div, batch) {
   const isLab = /\blab\b|\bpr\b|\bpractical\b/i.test(s);
 
   /* Collect ALL caps tokens */
-  const allCodes    = [...s.matchAll(/\b([A-Z]{2,5})\b/g)].map(m => m[1]);
-  const batchCodes  = allCodes.filter(c => /^[A-H]\d$/i.test(c));
-  const facultyCodes= allCodes.filter(c =>
+  const allCodes = [...s.matchAll(/\b([A-Z]{2,5})\b/g)].map(m => m[1]);
+  const batchCodes = allCodes.filter(c => /^[A-H]\d$/i.test(c));
+  const facultyCodes = allCodes.filter(c =>
     !(/^[A-H]\d$/i.test(c)) &&
     !SKIP_TOKENS.has(c) &&
     (FACULTY_MAP[c] || c.length >= 2)
   );
 
   /* If cell names batches but ours isn't among them → skip */
-  if (batchCodes.length > 0 && !batchCodes.map(b=>b.toUpperCase()).includes(batch.toUpperCase())) return null;
+  if (batchCodes.length > 0 && !batchCodes.map(b => b.toUpperCase()).includes(batch.toUpperCase())) return null;
 
   /* Build subject string: remove batch codes + code-only paren groups */
   let subj = s
@@ -874,7 +898,7 @@ function parseBatchCellSegment(seg, div, batch) {
     subj = subj.replace(new RegExp(`(?:^|\\s)${fe}(?:\\s|$)`, 'g'), ' ').trim();
   });
 
-  subj = subj.replace(/[()]/g,'').replace(/\s{2,}/g,' ').trim();
+  subj = subj.replace(/[()]/g, '').replace(/\s{2,}/g, ' ').trim();
   if (!subj || subj.length < 2 || SKIP_TOKENS.has(subj.toUpperCase())) return null;
 
   /* Filter faculty codes — remove batch/skip tokens */
@@ -892,8 +916,8 @@ function parseBatchCellSegment(seg, div, batch) {
 
 /* ── 4. Core: Build & render batch timetable ──────────────────── */
 function buildBatchTimetable(div, batch) {
-  const data    = state.sheetData;
-  const dayCol  = state.dayCol;
+  const data = state.sheetData;
+  const dayCol = state.dayCol;
   const timeCol = state.timeCol;
 
   /* Init empty schedule */
@@ -906,8 +930,8 @@ function buildBatchTimetable(div, batch) {
   let curDay = null;
 
   for (let r = 0; r < data.length; r++) {
-    const row     = data[r] || [];
-    const dayVal  = String(row[dayCol]  || '').trim().toUpperCase();
+    const row = data[r] || [];
+    const dayVal = String(row[dayCol] || '').trim().toUpperCase();
     const timeRaw = String(row[timeCol] || '').trim();
 
     const dk = matchDay(dayVal);
@@ -942,7 +966,7 @@ function buildBatchTimetable(div, batch) {
     mergeInfo[day] = {};
     let i = 0;
     while (i < LECTURE_SLOTS.length) {
-      const key     = LECTURE_SLOTS[i];
+      const key = LECTURE_SLOTS[i];
       const entries = schedule[day][key];
       if (!entries.length) { i++; continue; }
       const isLab = entries.some(e => e.type === 'lab');
@@ -950,7 +974,7 @@ function buildBatchTimetable(div, batch) {
         const subjKey = entries[0]?.subject || '';
         let span = 1;
         while (i + span < LECTURE_SLOTS.length) {
-          const k2   = LECTURE_SLOTS[i + span];
+          const k2 = LECTURE_SLOTS[i + span];
           const ent2 = schedule[day][k2];
           if (!ent2.length) break;
           if (ent2.some(e => e.type === 'lab') && ent2[0]?.subject === subjKey) {
@@ -972,7 +996,7 @@ function buildBatchTimetable(div, batch) {
   );
   timetableGrid.style.gridTemplateColumns = `120px ${colDefs.join(' ')}`;
   timetableGrid.innerHTML = '';
-  colorLegend.innerHTML   = '';
+  colorLegend.innerHTML = '';
 
   /* Corner header */
   const corner = document.createElement('div');
@@ -1016,7 +1040,7 @@ function buildBatchTimetable(div, batch) {
       if (mi?.skip) return;  // absorbed into lab span
 
       const entries = schedule[day][slot.key] || [];
-      const span    = mi?.span || 1;
+      const span = mi?.span || 1;
       const cssSpan = computeCssSpan(slot.key, span);
 
       if (!entries.length) {
@@ -1028,9 +1052,9 @@ function buildBatchTimetable(div, batch) {
         timetableGrid.appendChild(empty);
       } else {
         hasAnyData = true;
-        const isLab    = entries.some(e => e.type === 'lab');
+        const isLab = entries.some(e => e.type === 'lab');
         const colorIdx = getSubjectColor(entries[0].subject || '');
-        const cell     = document.createElement('div');
+        const cell = document.createElement('div');
         cell.className = `grid-cell subject-cell color-${colorIdx}`;
         if (cssSpan > 1) cell.style.gridColumn = `span ${cssSpan}`;
 
@@ -1038,11 +1062,10 @@ function buildBatchTimetable(div, batch) {
         const subjectBlocks = entries.map(e => {
           subjectsFound.add(e.subject);
           const facultyHtml = e.facultyCodes?.length
-            ? `<div class="class-div batch-faculty">${
-                e.facultyCodes.map(fc =>
-                  `<span class="fac-chip" title="${facultyName(fc)}">${fc}</span>`
-                ).join('')
-              }</div>`
+            ? `<div class="class-div batch-faculty">${e.facultyCodes.map(fc =>
+              `<span class="fac-chip" title="${facultyName(fc)}">${fc}</span>`
+            ).join('')
+            }</div>`
             : '';
           return `<div class="subject-entry">
             <div class="subject-name">${escHtml(e.subject)}</div>
@@ -1075,7 +1098,7 @@ function buildBatchTimetable(div, batch) {
 function injectBatchUI() {
   /* Tab strip — insert above teacher search */
   const strip = document.createElement('div');
-  strip.id    = 'modeTabs';
+  strip.id = 'modeTabs';
   strip.innerHTML = `
     <button id="tabTeacher" class="mode-tab active">👤 By Teacher</button>
     <button id="tabBatch"   class="mode-tab">🏫 By Batch</button>
@@ -1084,7 +1107,7 @@ function injectBatchUI() {
 
   /* Batch panel */
   const panel = document.createElement('div');
-  panel.id    = 'batchModePanel';
+  panel.id = 'batchModePanel';
   panel.style.display = 'none';
   panel.innerHTML = `
     <div id="divPanel">
@@ -1100,15 +1123,15 @@ function injectBatchUI() {
 
   /* Tab click handlers */
   document.getElementById('tabTeacher').addEventListener('click', () => switchMode('teacher'));
-  document.getElementById('tabBatch').addEventListener('click',   () => switchMode('batch'));
+  document.getElementById('tabBatch').addEventListener('click', () => switchMode('batch'));
 
   /* Populate division buttons */
   const divList = document.getElementById('divList');
   Object.entries(DIVISION_CONFIG).forEach(([div, cfg]) => {
     const btn = document.createElement('button');
-    btn.className   = 'div-btn';
+    btn.className = 'div-btn';
     btn.dataset.div = div;
-    btn.innerHTML   = `<strong>${div}</strong><span>${cfg.name}</span>`;
+    btn.innerHTML = `<strong>${div}</strong><span>${cfg.name}</span>`;
     btn.addEventListener('click', () => selectDivision(div));
     divList.appendChild(btn);
   });
@@ -1119,24 +1142,24 @@ function switchMode(mode) {
   state.viewMode = mode;
   const tabT = document.getElementById('tabTeacher');
   const tabB = document.getElementById('tabBatch');
-  const bmp  = document.getElementById('batchModePanel');
+  const bmp = document.getElementById('batchModePanel');
 
   if (mode === 'teacher') {
-    tabT.classList.add('active');   tabB.classList.remove('active');
-    bmp.style.display              = 'none';
-    teacherSearch.style.display    = '';
-    teacherList.style.display      = '';
+    tabT.classList.add('active'); tabB.classList.remove('active');
+    bmp.style.display = 'none';
+    teacherSearch.style.display = '';
+    teacherList.style.display = '';
   } else {
-    tabB.classList.add('active');   tabT.classList.remove('active');
-    bmp.style.display              = 'block';
-    teacherSearch.style.display    = 'none';
-    teacherList.style.display      = 'none';
+    tabB.classList.add('active'); tabT.classList.remove('active');
+    bmp.style.display = 'block';
+    teacherSearch.style.display = 'none';
+    teacherList.style.display = 'none';
   }
 }
 
 /* ── 7. Division selected → show batch buttons ────────────────── */
 function selectDivision(div) {
-  state.selectedDiv   = div;
+  state.selectedDiv = div;
   state.selectedBatch = null;
 
   document.querySelectorAll('.div-btn').forEach(b =>
@@ -1144,15 +1167,15 @@ function selectDivision(div) {
   );
 
   const batchPanel = document.getElementById('batchPanel');
-  const batchList  = document.getElementById('batchList');
+  const batchList = document.getElementById('batchList');
   batchPanel.style.display = 'block';
   batchList.innerHTML = '';
 
   DIVISION_CONFIG[div].batches.forEach(batch => {
     const btn = document.createElement('button');
-    btn.className     = 'batch-btn';
+    btn.className = 'batch-btn';
     btn.dataset.batch = batch;
-    btn.textContent   = batch;
+    btn.textContent = batch;
     btn.addEventListener('click', () => selectBatch(div, batch));
     batchList.appendChild(btn);
   });
@@ -1160,7 +1183,7 @@ function selectDivision(div) {
 
 /* ── 8. Batch selected → render timetable ─────────────────────── */
 function selectBatch(div, batch) {
-  state.selectedDiv   = div;
+  state.selectedDiv = div;
   state.selectedBatch = batch;
   state.selectedTeacher = null;
 
@@ -1170,8 +1193,8 @@ function selectBatch(div, batch) {
   if (window.innerWidth < 900) sidebar.classList.remove('open');
 
   contentPlaceholder.style.display = 'none';
-  timetableView.style.display      = 'block';
-  teacherNameDisplay.textContent   =
+  timetableView.style.display = 'block';
+  teacherNameDisplay.textContent =
     `Division ${div} · Batch ${batch}   —   ${DIVISION_CONFIG[div].name}`;
 
   buildBatchTimetable(div, batch);
